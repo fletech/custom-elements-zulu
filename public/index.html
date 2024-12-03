@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Services Grid</title>
+  </head>
+  <body>
+    <script src="/services-grid.js"></script>
+    <services-grid></services-grid>
+    <script>
+      // Datos de prueba
+      const testData = [
+        {
+          serviceName: "Servicio 1",
+          description: "Descripción del servicio 1",
+          priceAmount: 100,
+          currency: "USD",
+          bookingsFlowEntryUrl: "#",
+        },
+        {
+          serviceName: "Servicio 2",
+          description: "Descripción del servicio 2",
+          priceAmount: 200,
+          currency: "USD",
+          bookingsFlowEntryUrl: "#",
+        },
+      ];
+
+      // Enviar datos al componente
+      const grid = document.querySelector("services-grid");
+      setTimeout(() => {
+        grid.setServices(testData);
+      }, 100);
+    </script>
+  </body>
+</html>

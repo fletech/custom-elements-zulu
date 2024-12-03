@@ -1,0 +1,17 @@
+----- CLI crash report at 2024-12-03T23:23:22.879Z
+Error Trace
+FailedToCheckDeprecatedStatus: FailedToCheckDeprecatedStatus
+    at ir (/usr/local/lib/node_modules/@wix/cli/src/deprecator.ts:59:30)
+    at <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.ts:61:3)
+caused by: FailedToWriteCache: FailedToWriteCache
+    at Object.set (/usr/local/lib/node_modules/@wix/cli-fs-cache/src/index.ts:75:13)
+    at ir (/usr/local/lib/node_modules/@wix/cli/src/deprecator.ts:56:7)
+    at <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.ts:61:3)
+caused by: FailedToWriteJson: FailedToWriteJson
+    at v (/usr/local/lib/node_modules/@wix/cli-fs/src/index.ts:22:11)
+    at Object.set (/usr/local/lib/node_modules/@wix/cli-fs-cache/src/index.ts:69:7)
+    at ir (/usr/local/lib/node_modules/@wix/cli/src/deprecator.ts:56:7)
+    at <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.ts:61:3)
+caused by: Error: EACCES: permission denied, open '/usr/local/lib/node_modules/@wix/cli/version.cache.json'
+Error Info
+{}
