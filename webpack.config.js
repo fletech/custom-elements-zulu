@@ -1,19 +1,29 @@
 const path = require("path");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: {
-    "services-grid": "./src/components/ServicesGrid.js",
-  },
+  entry: "./src/components/ServicesGrid.js",
   output: {
-    filename: "[name].js",
+    filename: "services-grid.js",
     path: path.resolve(__dirname, "dist"),
   },
-  devServer: {
-    static: {
-      directory: path.join(__dirname, "public"),
-    },
-    compress: true,
-    port: 9000,
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["css-loader"],
+      },
+    ],
   },
+  plugins: [
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "src/styles",
+          to: "styles",
+        },
+      ],
+    }),
+  ],
 };
